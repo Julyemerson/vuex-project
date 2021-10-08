@@ -8,21 +8,13 @@
       </header>
       <main>
         <ul class="faq-categories">
-          <li class="bootcamp__items">
-            <img :src="basecamp1" alt="basecamp" />
-            BaseCamp
-          </li>
-          <li class="bootcamp__items">
-            <img :src="bootcamp2" alt="bootcamp" />
-            BootCamp
-          </li>
-          <li class="bootcamp__items">
-            <img :src="cataline" alt="cataline" />
-            Cataline
-          </li>
-          <li class="bootcamp__items">
-            <img :src="parceria" alt="parcerias" />
-            Parcerias
+          <li
+            class="bootcamp__items"
+            v-for="categorie in faqCategories"
+            :key="categorie.name"
+          >
+            <img :src="categorie.image" :alt="categorie.name" />
+            {{ categorie.name }}
           </li>
         </ul>
       </main>
@@ -45,6 +37,16 @@ export default {
       bootcamp2,
       cataline,
       parceria,
+    };
+  },
+  data() {
+    return {
+      faqCategories: [
+        { name: "Basecamp", image: basecamp1 },
+        { name: "Bootcamp", image: bootcamp2 },
+        { name: "Cataline", image: cataline },
+        { name: "Parceria", image: parceria },
+      ],
     };
   },
   computed: {
@@ -72,7 +74,7 @@ export default {
   color: #f5f6f8;
 
   max-width: 305px;
-  margin: 1rem 1rem;
+  margin: 0 auto;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
