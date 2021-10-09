@@ -12,6 +12,7 @@
             class="bootcamp__items"
             v-for="categorie in faqCategories"
             :key="categorie.name"
+            @click="currentView = 'Questions'"
           >
             <img :src="categorie.image" :alt="categorie.name" />
             {{ categorie.name }}
@@ -20,6 +21,8 @@
       </main>
     </div>
   </div>
+
+  <component :is="currentView" />
 </template>
 
 <script>
@@ -29,7 +32,11 @@ import bootcamp2 from "@/assets/icons/bootcamp-2.svg";
 import cataline from "@/assets/icons/cataline-3.svg";
 import parceria from "@/assets/icons/parceria-4.svg";
 
+import Questions from "@/pages/Questions.vue";
+
 export default {
+  components: { Questions },
+
   setup() {
     return {
       astronaut,
@@ -47,6 +54,7 @@ export default {
         { name: "Cataline", image: cataline },
         { name: "Parceria", image: parceria },
       ],
+      currentView: "Home",
     };
   },
   computed: {
@@ -75,8 +83,9 @@ export default {
 
   max-width: 305px;
   margin: 0 auto;
+  padding: 0.5rem;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+  box-shadow: rgba(34, 224, 219, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
