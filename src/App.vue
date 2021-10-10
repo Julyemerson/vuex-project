@@ -12,7 +12,7 @@
             class="bootcamp__items"
             v-for="categorie in faqCategories"
             :key="categorie.name"
-            @click="currentView = 'Questions'"
+            @click="currentView = categorie.name"
           >
             <img :src="categorie.image" :alt="categorie.name" />
             {{ categorie.name }}
@@ -27,32 +27,35 @@
 
 <script>
 import astronaut from "@/assets/images/astronaut.svg";
-import basecamp1 from "@/assets/icons/basecamp-1.svg";
-import bootcamp2 from "@/assets/icons/bootcamp-2.svg";
-import cataline from "@/assets/icons/cataline-3.svg";
-import parceria from "@/assets/icons/parceria-4.svg";
+import basecampIcon from "@/assets/icons/basecamp-1.svg";
+import bootcampIcon from "@/assets/icons/bootcamp-2.svg";
+import catalineIcon from "@/assets/icons/cataline-3.svg";
+import partneshipIcon from "@/assets/icons/parceria-4.svg";
 
-import Questions from "@/pages/Questions.vue";
+import Basecamp from "@/pages/Basecamp.vue";
+import Bootcamp from "@/pages/Bootcamp.vue";
+import Cataline from "@/pages/Cataline.vue";
+import Partnership from "@/pages/Partnership.vue";
 
 export default {
-  components: { Questions },
+  components: { Basecamp, Bootcamp, Cataline, Partnership },
 
   setup() {
     return {
       astronaut,
-      basecamp1,
-      bootcamp2,
-      cataline,
-      parceria,
+      basecampIcon,
+      bootcampIcon,
+      catalineIcon,
+      partneshipIcon,
     };
   },
   data() {
     return {
       faqCategories: [
-        { name: "Basecamp", image: basecamp1 },
-        { name: "Bootcamp", image: bootcamp2 },
-        { name: "Cataline", image: cataline },
-        { name: "Parceria", image: parceria },
+        { name: "Basecamp", image: basecampIcon },
+        { name: "Bootcamp", image: bootcampIcon },
+        { name: "Cataline", image: catalineIcon },
+        { name: "Partnership", image: partneshipIcon },
       ],
       currentView: "Home",
     };
@@ -112,15 +115,12 @@ export default {
   justify-content: flex-start;
   gap: 2rem;
   align-items: center;
-}
-
-ul li {
-  padding: 1rem;
-  transition: 0.3s;
+  padding: 1rem 2rem;
+  transition: 0.5s;
   cursor: pointer;
 }
 
-ul li:hover {
+.bootcamp__items:hover {
   background: #3f4452;
   border-radius: 5px;
 }

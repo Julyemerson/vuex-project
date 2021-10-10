@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Questions</h1>
+    <h1>Basecamp</h1>
   </div>
 </template>
 
