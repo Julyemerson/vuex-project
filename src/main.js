@@ -3,7 +3,6 @@ import App from "./App.vue";
 import store from "./store";
 import "@/assets/css/style.css";
 
-//prettier-ignore
-createApp(App)
-    .use(store)
-    .mount("#app");
+const app = createApp(App);
+app.use(store);
+app.mount("#app");

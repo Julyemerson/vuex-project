@@ -73,38 +73,6 @@ export default {
 </script>
 
 <style>
-.wrapper {
-  display: grid;
-  grid-template-columns: 305px;
-  grid-template-rows: auto;
-  justify-content: center;
-  align-content: center;
-  gap: 1rem;
-
-  background: #26282c;
-  color: #f5f6f8;
-
-  max-width: 305px;
-  margin: 0 auto;
-  padding: 0.5rem;
-  border-radius: 10px;
-  box-shadow: rgba(34, 224, 219, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
-.title {
-  margin-top: 0.5rem;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 0.3rem;
-}
-
-.subtitle {
-  font-size: 16px;
-  font-weight: 400;
-  padding: 0.3rem;
-}
-
 .faq-categories {
   list-style: none;
 }
