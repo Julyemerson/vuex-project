@@ -35,10 +35,10 @@ import partneshipIcon from "@/assets/icons/parceria-4.svg";
 import Basecamp from "@/pages/Basecamp.vue";
 import Bootcamp from "@/pages/Bootcamp.vue";
 import Cataline from "@/pages/Cataline.vue";
-import Partnership from "@/pages/Partnership.vue";
+import Parcerias from "@/pages/Partnership.vue";
 
 export default {
-  components: { Basecamp, Bootcamp, Cataline, Partnership },
+  components: { Basecamp, Bootcamp, Cataline, Parcerias },
 
   setup() {
     return {
@@ -55,7 +55,7 @@ export default {
         { name: "Basecamp", image: basecampIcon },
         { name: "Bootcamp", image: bootcampIcon },
         { name: "Cataline", image: catalineIcon },
-        { name: "Partnership", image: partneshipIcon },
+        { name: "Parcerias", image: partneshipIcon },
       ],
       currentView: "Home",
     };
@@ -67,7 +67,6 @@ export default {
   },
   created() {
     this.$store.dispatch("fetchQuestions");
-    console.log(this.$allQuestions);
   },
 };
 </script>
