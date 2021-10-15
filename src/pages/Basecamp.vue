@@ -8,6 +8,17 @@
       </div>
       <img :src="basecampIcon" alt="Basecamp" />
     </header>
+    <main>
+      <ul class="faq-categories">
+        <li
+          v-for="question in $basecampQuestions"
+          :key="question.id"
+          class="list_items"
+        >
+          {{ question.questions.title }}
+        </li>
+      </ul>
+    </main>
   </div>
 </template>
 
@@ -23,13 +34,12 @@ export default {
     };
   },
   computed: {
-    $allQUestions() {
-      const data = this.$store.getters.$allQuestions;
-      return data;
+    $basecampQuestions() {
+      return this.$store.getters.$basecampQuestions;
     },
   },
   created() {
-    console.log(this.$allQUestions);
+    console.log(this.$basecampQuestions);
   },
 };
 </script>

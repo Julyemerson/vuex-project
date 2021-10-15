@@ -21,5 +21,10 @@ export default createStore({
     $allQuestions(state) {
       return state.faqQuestions;
     },
+    $basecampQuestions(state) {
+      return state.faqQuestions.filter(
+        (question) => question.title === "Basecamp"
+      );
+    },
   },
 });

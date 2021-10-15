@@ -60,3 +60,23 @@ a {
   font-weight: 400;
   padding: 0.3rem;
 }
+
+.list_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.list_items:hover {
+  background: #3f4452;
+  border-radius: 5px;
+}
+
+.faq-categories {
+  list-style: none;
+}

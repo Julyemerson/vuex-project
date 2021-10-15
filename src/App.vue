@@ -9,7 +9,7 @@
       <main>
         <ul class="faq-categories">
           <li
-            class="bootcamp__items"
+            class="list_items"
             v-for="categorie in faqCategories"
             :key="categorie.name"
             @click="currentView = categorie.name"
@@ -72,26 +72,6 @@ export default {
 </script>
 
 <style>
-.faq-categories {
-  list-style: none;
-}
-
-.bootcamp__items {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 2rem;
-  align-items: center;
-  padding: 1rem 2rem;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.bootcamp__items:hover {
-  background: #3f4452;
-  border-radius: 5px;
-}
-
 header {
   padding: 1rem;
 }
