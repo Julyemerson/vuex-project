@@ -2,29 +2,42 @@ import { createStore } from "vuex";
 import { faqCategories } from "@/utils/db.json";
 
 export default createStore({
-  state: {
-    faqQuestions: [],
-  },
-  mutations: {
-    SET_QUESTIONS(state, questions) {
-      state.faqQuestions = questions;
+    state: {
+        faqQuestions: [],
+        basecampQuestion: [],
     },
-  },
-  actions: {
-    fetchQuestions(context) {
-      const questions = faqCategories;
+    mutations: {
+        SET_QUESTIONS(state, questions) {
+            state.faqQuestions = questions;
+        },
 
-      context.commit("SET_QUESTIONS", questions);
+        SET_BASECAMP_QUESTIONS(state, basecampQuestions) {
+            state.basecampQuestion = basecampQuestions;
+        },
     },
-  },
-  getters: {
-    $allQuestions(state) {
-      return state.faqQuestions;
+    actions: {
+        fetchAllQuestions(context) {
+            const questions = faqCategories;
+
+            context.commit("SET_QUESTIONS", questions);
+        },
+
+        fetchBasecampQuestion(context) {
+            const basecampQuestions = faqCategories[0].questions;
+
+            context.commit("SET_BASECAMP_QUESTIONS", basecampQuestions);
+        },
     },
-    $basecampQuestions(state) {
-      return state.faqQuestions.filter(
-        (question) => question.title === "Basecamp"
-      );
+    getters: {
+        $allQuestions(state) {
+            return state.faqQuestions;
+        },
+        $basecampQuestions(state) {
+            return state.basecampQuestion;
+        },
     },
-  },
 });
+
+//Global state -> actions -> mutations -> change global state
+//access by getters
+//just mutations can change the global state. Thats a good pratice
