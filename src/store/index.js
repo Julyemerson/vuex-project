@@ -2,54 +2,58 @@ import { createStore } from "vuex";
 import { faqCategories } from "@/utils/db.json";
 
 export default createStore({
-    state: {
-        faqQuestions: [],
-        basecampQuestion: [],
-        bootcampQuestion: [],
+  state: {
+    faqQuestions: [],
+    basecampQuestion: [],
+    bootcampQuestion: [],
+    catalineQuestion: [],
+  },
+  mutations: {
+    SET_QUESTIONS(state, questions) {
+      state.faqQuestions = questions;
     },
-    mutations: {
-        SET_QUESTIONS(state, questions) {
-            state.faqQuestions = questions;
-        },
-
-        SET_BASECAMP_QUESTIONS(state, basecampQuestions) {
-            state.basecampQuestion = basecampQuestions;
-        },
-
-        SET_BOOTCAMP_QUESTIONS(state, bootcampQuestion) {
-            state.bootcampQuestion = bootcampQuestion;
-        },
+    SET_BASECAMP_QUESTIONS(state, basecampQuestions) {
+      state.basecampQuestion = basecampQuestions;
     },
-    actions: {
-        fetchAllQuestions(context) {
-            const questions = faqCategories;
-
-            context.commit("SET_QUESTIONS", questions);
-        },
-
-        fetchBasecampQuestion(context) {
-            const basecampQuestions = faqCategories[0].questions;
-
-            context.commit("SET_BASECAMP_QUESTIONS", basecampQuestions);
-        },
-
-        fetchBootcampQuestion(context) {
-            const bootcampQuestion = faqCategories[1].questions;
-
-            context.commit("SET_BOOTCAMP_QUESTIONS", bootcampQuestion);
-        },
+    SET_BOOTCAMP_QUESTIONS(state, bootcampQuestion) {
+      state.bootcampQuestion = bootcampQuestion;
     },
-    getters: {
-        $allQuestions(state) {
-            return state.faqQuestions;
-        },
-        $basecampQuestions(state) {
-            return state.basecampQuestion;
-        },
-        $bootcampQuestion(state) {
-            return state.bootcampQuestion;
-        },
+    SET_CATALINE_QUESTION(state, catalineQuestions) {
+      state.catalineQuestion = catalineQuestions;
     },
+  },
+  actions: {
+    fetchAllQuestions(context) {
+      const questions = faqCategories;
+      context.commit("SET_QUESTIONS", questions);
+    },
+    fetchBasecampQuestion(context) {
+      const basecampQuestions = faqCategories[0].questions;
+      context.commit("SET_BASECAMP_QUESTIONS", basecampQuestions);
+    },
+    fetchBootcampQuestion(context) {
+      const bootcampQuestion = faqCategories[1].questions;
+      context.commit("SET_BOOTCAMP_QUESTIONS", bootcampQuestion);
+    },
+    fetchCatalineQuestion(context) {
+      const catalineQuestions = faqCategories[2].questions;
+      context.commit("SET_CATALINE_QUESTIONS", catalineQuestions);
+    },
+  },
+  getters: {
+    $allQuestions(state) {
+      return state.faqQuestions;
+    },
+    $basecampQuestions(state) {
+      return state.basecampQuestion;
+    },
+    $bootcampQuestion(state) {
+      return state.bootcampQuestion;
+    },
+    $catalineQuestion(state) {
+      return state.catalineQuestion;
+    },
+  },
 });
 
 //Global state -> actions -> mutations -> change global state
