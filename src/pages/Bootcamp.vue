@@ -1,14 +1,37 @@
 <template>
-  <div>
-    <h1>Bootcamp</h1>
-  </div>
+    <div class="wrapper">
+        <Header />
+        <main>
+            <ul class="faq-categories">
+                <li
+                    v-for="question in $bootcampQuestions"
+                    :key="question.id"
+                    class="list_items"
+                >
+                    {{ question.title }}
+                </li>
+            </ul>
+        </main>
+    </div>
 </template>
 
 <script>
+import Header from "../components/Header.vue";
 export default {
-  data() {
-    return {};
-  },
+    components: { Header },
+
+    data() {
+        return {};
+    },
+    computed: {
+        $bootcampQuestions() {
+            return this.$store.getters.$bootcampQuestion;
+        },
+    },
+    created() {
+        this.$store.dispatch("fetchBootcampQuestion");
+        console.log(this.$bootcampQuestions);
+    },
 };
 </script>
 

@@ -5,6 +5,7 @@ export default createStore({
     state: {
         faqQuestions: [],
         basecampQuestion: [],
+        bootcampQuestion: [],
     },
     mutations: {
         SET_QUESTIONS(state, questions) {
@@ -13,6 +14,10 @@ export default createStore({
 
         SET_BASECAMP_QUESTIONS(state, basecampQuestions) {
             state.basecampQuestion = basecampQuestions;
+        },
+
+        SET_BOOTCAMP_QUESTIONS(state, bootcampQuestion) {
+            state.bootcampQuestion = bootcampQuestion;
         },
     },
     actions: {
@@ -27,6 +32,12 @@ export default createStore({
 
             context.commit("SET_BASECAMP_QUESTIONS", basecampQuestions);
         },
+
+        fetchBootcampQuestion(context) {
+            const bootcampQuestion = faqCategories[1].questions;
+
+            context.commit("SET_BOOTCAMP_QUESTIONS", bootcampQuestion);
+        },
     },
     getters: {
         $allQuestions(state) {
@@ -34,6 +45,9 @@ export default createStore({
         },
         $basecampQuestions(state) {
             return state.basecampQuestion;
+        },
+        $bootcampQuestion(state) {
+            return state.bootcampQuestion;
         },
     },
 });
