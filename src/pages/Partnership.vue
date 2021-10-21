@@ -1,14 +1,32 @@
 <template>
-  <div>
-    <h1>Parcerias</h1>
-  </div>
+    <div class="wrapper">
+        <Header />
+        <main>
+            <ul class="faq-categories">
+                <li
+                    v-for="question in $partnershipQuestions"
+                    :key="question.id"
+                    class="list_items"
+                >
+                    {{ question.title }}
+                </li>
+            </ul>
+        </main>
+    </div>
 </template>
 
 <script>
+import Header from "../components/Header.vue";
 export default {
-  data() {
-    return {};
-  },
+    components: { Header },
+    computed: {
+        $partnershipQuestions() {
+            return this.$store.getters.$partnershipQuestions;
+        },
+    },
+    created() {
+        this.$store.dispatch("fetchPartnershipQuestion");
+    },
 };
 </script>
 
