@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header :name="$basecampQuestions.title" />
+    <Header :categorieName="$categorieName" />
     <main>
       <ul class="faq-categories">
         <li
@@ -32,10 +32,15 @@ export default {
     $basecampQuestions() {
       return this.$store.getters.$basecampQuestions;
     },
+    $categorieName() {
+      const { title } = this.$store.getters.$allQuestions.find(
+        (cat) => cat.title === "Basecamp"
+      );
+      return title;
+    },
   },
   created() {
-    this.$store.dispatch("BasecampQuestion");
-    console.log(this.$basecampQuestions);
+    this.$store.dispatch("fetchBasecampQuestion");
   },
 };
 </script>

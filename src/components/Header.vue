@@ -2,7 +2,7 @@
   <header>
     <img :src="backArrow" alt="Seta Voltar" />
     <div>
-      <h2 class="title">{{ name }}</h2>
+      <h2 class="title">{{ categorieName }}</h2>
       <h3 class="subtitle">Selecione uma pergunta</h3>
     </div>
     <img :src="basecampIcon" alt="Basecamp" />
@@ -15,9 +15,8 @@ import basecampIcon from "@/assets/icons/basecamp-1.svg";
 
 export default {
   props: {
-    name: {
+    categorieName: {
       type: String,
-      required: true,
     },
   },
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header :name="$catalineQuestions.title" />
+    <Header :categorieName="$categorieName" />
     <main>
       <ul class="faq-categories">
         <li
@@ -22,6 +22,12 @@ export default {
   computed: {
     $catalineQuestions() {
       return this.$store.getters.$catalineQuestions;
+    },
+    $categorieName() {
+      const { title } = this.$store.getters.$allQuestions.find(
+        (cat) => cat.title === "Cataline"
+      );
+      return title;
     },
   },
   created() {
