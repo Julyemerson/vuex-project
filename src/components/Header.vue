@@ -5,20 +5,16 @@
       <h2 class="title">{{ categorieName }}</h2>
       <h3 class="subtitle">Selecione uma pergunta</h3>
     </div>
-    <img :src="basecampIcon" alt="Basecamp" />
+    <Logo logoName="Basecamp" />
   </header>
 </template>
 
 <script>
 import backArrow from "@/assets/icons/backArrow.svg";
 import basecampIcon from "@/assets/icons/basecamp-1.svg";
-
+import Logo from "@/components/Logo";
 export default {
-  props: {
-    categorieName: {
-      type: String,
-    },
-  },
+  components: { Logo },
   data() {
     return {
       backArrow,
