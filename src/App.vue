@@ -67,6 +67,7 @@ export default {
     },
     created() {
         this.$store.dispatch("fetchAllQuestions");
+        console.log(this.$allQuestions);
     },
 };
 </script>

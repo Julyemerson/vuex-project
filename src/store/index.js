@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import { fetchCategorieQuestion } from "./utils";
+import { fetchCategorieQuestion } from "../utils/utils";
 import { faqCategories } from "@/utils/db.json";
 
 const basecamp = "Basecamp";

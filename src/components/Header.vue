@@ -2,7 +2,7 @@
     <header>
         <img :src="backArrow" alt="Seta Voltar" />
         <div>
-            <h2 class="title">Basecamp</h2>
+            <h2 class="title">{{ categorieName }}</h2>
             <h3 class="subtitle">Selecione uma pergunta</h3>
         </div>
         <img :src="basecampIcon" alt="Basecamp" />
@@ -14,6 +14,11 @@ import backArrow from "@/assets/icons/backArrow.svg";
 import basecampIcon from "@/assets/icons/basecamp-1.svg";
 
 export default {
+    props: {
+        categorieName: {
+            type: String,
+        },
+    },
     data() {
         return {
             backArrow,
