@@ -1,18 +1,18 @@
 <template>
-    <div class="wrapper">
-        <Header />
-        <main>
-            <ul class="faq-categories">
-                <li
-                    class="list_items"
-                    v-for="categorie in $basecampQuestions"
-                    :key="categorie.id"
-                >
-                    {{ categorie.title }}
-                </li>
-            </ul>
-        </main>
-    </div>
+  <div class="wrapper">
+    <Header :name="$basecampQuestions.title" />
+    <main>
+      <ul class="faq-categories">
+        <li
+          class="list_items"
+          v-for="categorie in $basecampQuestions"
+          :key="categorie.id"
+        >
+          {{ categorie.title }}
+        </li>
+      </ul>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -21,21 +21,22 @@ import backArrow from "@/assets/icons/backArrow.svg";
 import Header from "../components/Header.vue";
 
 export default {
-    components: { Header },
-    data() {
-        return {
-            basecampIcon,
-            backArrow,
-        };
+  components: { Header },
+  data() {
+    return {
+      basecampIcon,
+      backArrow,
+    };
+  },
+  computed: {
+    $basecampQuestions() {
+      return this.$store.getters.$basecampQuestions;
     },
-    computed: {
-        $basecampQuestions() {
-            return this.$store.getters.$basecampQuestions;
-        },
-    },
-    created() {
-        this.$store.dispatch("BasecampQuestion");
-    },
+  },
+  created() {
+    this.$store.dispatch("BasecampQuestion");
+    console.log(this.$basecampQuestions);
+  },
 };
 </script>
 
