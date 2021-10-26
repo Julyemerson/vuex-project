@@ -1,33 +1,23 @@
 <template>
-  <img :src="getLogoByCategorie(logoName)" :alt="logoName" />
+    <img :src="a" :alt="logoName" />
 </template>
 
 <script>
-import basecampIcon from "@/assets/icons/basecamp-1.svg";
-import bootcampIcon from "@/assets/icons/bootcamp-2.svg";
-import catalineIcon from "@/assets/icons/cataline-3.svg";
-import partneshipIcon from "@/assets/icons/parceria-4.svg";
+// import basecampIcon from "@/assets/icons/rocket.svg";
+// import bootcampIcon from "@/assets/icons/astronaut-helmet.svg";
+// import catalineIcon from "@/assets/icons/student-hat.svg";
+// import partneshipIcon from "@/assets/icons/partnership.svg";
 export default {
-  props: {
-    logoName: {
-      type: String,
-      required: true,
+    props: {
+        logoName: {
+            type: String,
+            required: true,
+        },
     },
-  },
-  data() {
-    return {};
-  },
-  computed: {
-    getLogoByCategorie(categorie) {
-      const icons = {
-        basecamp: basecampIcon,
-        bootcamp: bootcampIcon,
-        cataline: catalineIcon,
-        parcerias: partneshipIcon,
-      }[categorie];
-      return icons;
+    data() {
+        return {};
     },
-  },
+    computed: {},
 };
 </script>
 
