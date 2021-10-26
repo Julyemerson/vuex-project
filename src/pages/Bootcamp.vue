@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header :categorieName="$categorieName" />
+    <Header :categorieName="$categorieName.title" :icon="$categorieName.icon" />
     <main>
       <ul class="faq-categories">
         <li
@@ -17,6 +17,7 @@
 
 <script>
 import Header from "../components/Header.vue";
+
 export default {
   components: { Header },
   computed: {
@@ -25,10 +26,10 @@ export default {
     },
 
     $categorieName() {
-      const { title } = this.$store.getters.$allQuestions.find(
+      const { title, icon } = this.$store.getters.$allQuestions.find(
         (cat) => cat.title === "Bootcamp"
       );
-      return title;
+      return { title, icon };
     },
   },
   created() {
