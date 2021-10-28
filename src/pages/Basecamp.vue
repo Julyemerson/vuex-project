@@ -16,8 +16,10 @@
   </div>
   <component
     :is="currentView"
-    :categorieName="$categorieName.title"
-    :content="$categorieName.content"
+    :categorieName="answers.title"
+    :content="answers.content"
+    v-for="answers in $basecampQuestions"
+    :key="answers.id"
   />
 </template>
 
@@ -49,6 +51,7 @@ export default {
   },
   created() {
     this.$store.dispatch("fetchBasecampQuestion");
+    console.log(this.$basecampQuestions);
   },
 };
 </script>

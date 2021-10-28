@@ -17,6 +17,8 @@
 
 <script>
 import Header from "../components/Header.vue";
+import { returnCategorieByName } from "../utils/utils";
+
 export default {
   components: { Header },
   computed: {
@@ -24,10 +26,8 @@ export default {
       return this.$store.getters.$partnershipQuestions;
     },
     $categorieName() {
-      const { title, icon } = this.$store.getters.$allQuestions.find(
-        (cat) => cat.title === "Parcerias"
-      );
-      return { title, icon };
+      const partnership = "Parcerias";
+      return returnCategorieByName(partnership);
     },
   },
   created() {
