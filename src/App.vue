@@ -1,28 +1,28 @@
 <template>
-    <div class="container">
-        <div class="wrapper">
-            <header>
-                <img :src="astronaut" class="header-astro" alt="Astronauta" />
-                <h2 class="title">Perguntas frequentes</h2>
-                <h3 class="subtitle">Escolha a categoria desejada</h3>
-            </header>
-            <main>
-                <ul class="faq-categories">
-                    <li
-                        class="list_items"
-                        v-for="categorie in $allQuestions"
-                        :key="categorie.id"
-                        @click="currentView = categorie.title"
-                    >
-                        <Logo :logoName="categorie.icon" />
-                        {{ categorie.title }}
-                    </li>
-                </ul>
-            </main>
-        </div>
+  <div class="container">
+    <div class="wrapper">
+      <header>
+        <img :src="astronaut" class="header-astro" alt="Astronauta" />
+        <h2 class="title">Perguntas frequentes</h2>
+        <h3 class="subtitle">Escolha a categoria desejada</h3>
+      </header>
+      <main>
+        <ul class="faq-categories">
+          <li
+            class="list_items"
+            v-for="categorie in $allQuestions"
+            :key="categorie.id"
+            @click="currentView = categorie.title"
+          >
+            <Logo :logoName="categorie.icon" />
+            {{ categorie.title }}
+          </li>
+        </ul>
+      </main>
     </div>
+  </div>
 
-    <component :is="currentView" />
+  <component :is="currentView" />
 </template>
 
 <script>
@@ -35,31 +35,27 @@ import Parcerias from "@/pages/Partnership.vue";
 import Logo from "./components/Logo.vue";
 
 export default {
-    components: { Basecamp, Bootcamp, Cataline, Parcerias, Logo },
+  components: { Basecamp, Bootcamp, Cataline, Parcerias, Logo },
 
-    setup() {
-        return {
-            astronaut,
-        };
+  data() {
+    return {
+      currentView: "Home",
+      astronaut,
+    };
+  },
+  computed: {
+    $allQuestions() {
+      return this.$store.getters.$allQuestions;
     },
-    data() {
-        return {
-            currentView: "Home",
-        };
-    },
-    computed: {
-        $allQuestions() {
-            return this.$store.getters.$allQuestions;
-        },
-    },
-    created() {
-        this.$store.dispatch("fetchAllQuestions");
-    },
+  },
+  created() {
+    this.$store.dispatch("fetchAllQuestions");
+  },
 };
 </script>
 
 <style>
 header {
-    padding: 1rem;
+  padding: 1rem;
 }
 </style>
