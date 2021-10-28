@@ -1,82 +1,87 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Lato;
-  height: 100vh;
-  background: #333;
+    font-family: Lato;
+    height: 100vh;
+    background: #333;
 }
 
 a {
-  color: #22e0db;
-  text-decoration: none;
+    color: #22e0db;
+    text-decoration: none;
 }
 
 @font-face {
-  font-family: Lato;
-  src: url("~@/assets/fonts/Lato-Regular.ttf");
-  font-weight: 400;
-  font-display: block;
+    font-family: Lato;
+    src: url("~@/assets/fonts/Lato-Regular.ttf");
+    font-weight: 400;
+    font-display: block;
 }
 
 @font-face {
-  font-family: Lato;
-  src: url("~@/assets/fonts/Lato-Bold.ttf");
-  font-weight: 700;
-  font-display: block;
+    font-family: Lato;
+    src: url("~@/assets/fonts/Lato-Bold.ttf");
+    font-weight: 700;
+    font-display: block;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 305px;
-  grid-template-rows: auto;
-  justify-content: center;
-  align-content: center;
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: 305px;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
 
-  background: #26282c;
-  color: #f5f6f8;
+    background: #26282c;
+    color: #f5f6f8;
 
-  max-width: 305px;
-  margin: 0 auto;
-  padding: 0.5rem;
-  border-radius: 10px;
-  box-shadow: rgba(34, 224, 219, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    max-width: 305px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(34, 224, 219, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .title {
-  margin-top: 0.5rem;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 0.3rem;
+    margin-top: 0.5rem;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.3rem;
 }
 
 .subtitle {
-  font-size: 16px;
-  font-weight: 400;
-  padding: 0.3rem;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0.3rem;
 }
 
 .list_items {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 2rem;
-  align-items: center;
-  padding: 1rem 2rem;
-  transition: 0.5s;
-  cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .list_items:hover {
-  background: #3f4452;
-  border-radius: 5px;
+    background: #3f4452;
+    border-radius: 5px;
 }
 
 .faq-categories {
-  list-style: none;
+    list-style: none;
+}
+
+.content {
+    font-size: 13px;
+    padding: 0.3rem;
 }
