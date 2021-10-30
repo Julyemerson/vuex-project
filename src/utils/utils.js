@@ -13,9 +13,16 @@ export const fetchCategorieQuestion = (context, categorie) => {
   );
 };
 
-export const returnCategorieByName = (categorie) => {
+export const categorieByName = (categorie) => {
   const { title, icon } = createStore.getters.$allQuestions.find(
     (cat) => cat.title === categorie
   );
   return { title, icon };
+};
+
+export const answerByName = (question) => {
+  const { content } = createStore.getters.$basecampQuestions.find(
+    (asnwer) => asnwer.title === question
+  );
+  return content;
 };

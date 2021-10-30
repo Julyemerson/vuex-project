@@ -26,9 +26,9 @@
 <script>
 import basecampIcon from "@/assets/icons/rocket.svg";
 import backArrow from "@/assets/icons/backArrow.svg";
-import Header from "../components/Header.vue";
-import Answers from "./Answers.vue";
-import { returnCategorieByName } from "../utils/utils";
+import Header from "@/components/Header.vue";
+import Answers from "@/pages/Answers.vue";
+import { answerByName, categorieByName } from "../utils/utils";
 
 export default {
   components: { Header, Answers },
@@ -46,7 +46,12 @@ export default {
     },
     $categorieName() {
       const basecamp = "Basecamp";
-      return returnCategorieByName(basecamp);
+      return categorieByName(basecamp);
+    },
+  },
+  methods: {
+    $answerByName(title) {
+      answerByName(title);
     },
   },
   created() {
