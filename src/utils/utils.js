@@ -19,10 +19,3 @@ export const categorieByName = (categorie) => {
   );
   return { title, icon };
 };
-
-export const answerByName = (question) => {
-  const { content } = createStore.getters.$basecampQuestions.find(
-    (asnwer) => asnwer.title === question
-  );
-  return content;
-};
