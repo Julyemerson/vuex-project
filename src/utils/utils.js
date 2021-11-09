@@ -14,8 +14,15 @@ export const fetchCategorieQuestion = (context, categorie) => {
 };
 
 export const categorieByName = (categorie) => {
+<<<<<<< HEAD
     const { title, icon } = createStore.getters.$allQuestions.find(
         (cat) => cat.title === categorie
     );
     return { title, icon };
+=======
+  const { title, icon } = createStore.getters.$allQuestions.find(
+    (cat) => cat.title === categorie
+  );
+  return { title, icon };
+>>>>>>> b93c53c10cf92167cd383716536c65750b6b6049
 };
