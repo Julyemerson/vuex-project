@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import FaqCategories from "@/components/FaqCategories";
-import Questions from "@/components/Questions";
-import Answer from "@/components/Answer";
+import FaqCategories from "./components/FaqCategories.vue";
+import Questions from "./components/Questions.vue";
+import Answer from "./components/Answers.vue";
 
 export default {
     name: "App",
@@ -55,9 +55,9 @@ export default {
         padding-bottom: 0.875rem;
         background-image: linear-gradient(to bottom, #3f4452, #26282c);
         border-radius: 15px;
-        -webkit-box-shadow: 0px 8px 21px 3px rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0px 8px 21px 3px rgba(0, 0, 0, 0.19);
-        box-shadow: 0px 8px 21px 3px rgba(0, 0, 0, 0.19);
+        -webkit-box-shadow: 0px 8px 21px 3px rgba(34, 224, 219, 0.19);
+        -moz-box-shadow: 0px 8px 21px 3px rgba(34, 224, 219, 0.19);
+        box-shadow: 0px 8px 21px 3px rgba(34, 224, 219, 0.19);
         overflow: hidden;
         position: relative;
     }
